@@ -6,9 +6,9 @@ import (
 
 	"github.com/NonNtp/gin-gorm/db"
 	"github.com/NonNtp/gin-gorm/routes"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-	"github.com/gin-contrib/cors"
 )
 
 func main() {
@@ -29,6 +29,11 @@ func main() {
 	r := gin.Default()
 	r.Use(cors.New(corsConfig))
 	routes.ServeRoutes(r)
-	
-	r.Run(":" + os.Getenv("PORT"))
+
+	port := os.Getenv("PORT")
+	if port != "" {
+		port = "8080"
+	}
+
+	r.Run(":" + port)
 }
