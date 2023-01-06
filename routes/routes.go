@@ -12,7 +12,6 @@ func ServeRoutes(r *gin.Engine) {
 	apiV2 := r.Group("/api/v2")
 
 	v1.InitUserRoutes(apiV1)
-	v1.InitBlogRoutes(apiV1)
 
 	v2.InitHomeRoutes(apiV2)
 
