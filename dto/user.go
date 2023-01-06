@@ -12,7 +12,7 @@ type LoginRequest struct {
 }
 
 type UserResponse struct {
-	ID       uint         `json:"id"`
-	Fullname string       `json:"fullname"`
-	Email    string       `json:"email"`
+	ID       uint   `json:"id"`
+	Fullname string `json:"fullname"`
+	Email    string `json:"email"`
 }
